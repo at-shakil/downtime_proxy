@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blue the Sky - Maintenance</title>
+  <title><%= full_title(yield :page_title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= render "layouts/shim" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <%= render "shared/header" %>
+  <div class="container-fluid">
+    <%= yield %>
+  </div>
+  <%= render "shared/footer" %>
 </body>
 </html>
